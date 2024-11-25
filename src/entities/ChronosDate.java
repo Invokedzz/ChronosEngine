@@ -53,6 +53,20 @@ public class ChronosDate {
 
     }
 
+    public static void timeProgressionWithChronos (int year, int month, int day) {
+
+        String manualParse = year + "-" + month + "-" + day;
+
+        // 2007-12-03
+
+        LocalDate date = LocalDate.parse(manualParse);
+
+    }
+
+    private static void askUserAboutDaysMonthYear () {
+
+    }
+
     private static void dateByChronos () {
 
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
