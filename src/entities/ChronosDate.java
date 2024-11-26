@@ -75,23 +75,25 @@ public class ChronosDate {
 
     private static void askUserAboutDaysMonth (LocalDate date, char userChoice, Scanner init) {
 
-        if (userChoice == 'M' || userChoice == 'm') {
+        switch (userChoice) {
 
-            System.out.println("(p or P) to add, otherwise we shall reduce the months ourselves");
+            case 'm' | 'M':
 
-            char askAnotherQuestion = init.next().charAt(0);
+                System.out.println("(p or P) to add, otherwise we shall reduce the months ourselves");
 
-            if (askAnotherQuestion == 'p' || askAnotherQuestion == 'P') {
+                char askAnotherQuestion = init.next().charAt(0);
 
-                System.out.println("Enter a value to add: ");
+                if (askAnotherQuestion == 'p' || askAnotherQuestion == 'P') {
 
-                int addValue = init.nextInt();
+                    System.out.println("Enter a value to add: ");
 
-                LocalDate newDate = date.plusMonths(addValue);
+                    int addValue = init.nextInt();
 
-                System.out.println(newDate);
+                    LocalDate newDate = date.plusMonths(addValue);
 
-            } else {
+                    System.out.println(newDate);
+
+                }
 
                 System.out.println("Enter a value to subtract: ");
 
@@ -101,39 +103,37 @@ public class ChronosDate {
 
                 System.out.println(newDate);
 
-            }
+            case 'D' | 'd':
 
-        } else if (userChoice == 'D' || userChoice == 'd') {
+                System.out.println("Plus or minus? ");
 
-            System.out.println("Plus or minus? ");
+                char askNewQuestion = init.next().charAt(0);
 
-            char askAnotherQuestion = init.next().charAt(0);
+                if (askNewQuestion == 'p' || askNewQuestion == 'P') {
 
-            if (askAnotherQuestion == 'p' || askAnotherQuestion == 'P') {
+                    System.out.println("Enter a value to add: ");
 
-                System.out.println("Enter a value to add: ");
+                    int addValue = init.nextInt();
 
-                int addValue = init.nextInt();
+                    LocalDate newDateDays = date.plusDays(addValue);
 
-                LocalDate newDate = date.plusDays(addValue);
+                    System.out.println(newDateDays);
 
-                System.out.println(newDate);
-
-            } else {
+                }
 
                 System.out.println("Enter a value to subtract: ");
 
-                int subtractValue = init.nextInt();
+                int subtractValueDays = init.nextInt();
 
-                LocalDate newDate = date.minusDays(subtractValue);
+                LocalDate newDateDays = date.minusDays(subtractValueDays);
 
-                System.out.println(newDate);
-
-            }
+                System.out.println(newDateDays);
 
         }
 
     }
+
+
 
     private static void dateByChronos () {
 

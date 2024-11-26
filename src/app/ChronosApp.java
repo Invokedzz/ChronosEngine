@@ -34,7 +34,7 @@ public class ChronosApp {
 
     private static void chronosOptions (Scanner initScanner) throws InterruptedException {
 
-        System.out.println("Select an option!");
+        System.out.println("Select an option! (1), (2), (3), (4). ");
 
         int selectOption = validationScanner(initScanner);
 
