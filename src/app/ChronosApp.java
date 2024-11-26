@@ -10,6 +10,8 @@ import java.util.Locale;
 
 import validators.ValidatorsPackage;
 
+import validators.ScannerValidators;
+
 public class ChronosApp {
 
     public static void main (String[] args) throws  InterruptedException {
@@ -38,7 +40,7 @@ public class ChronosApp {
 
         System.out.println("Select an option! (1), (2), (3), (4). ");
 
-        int selectOption = validationScanner(initScanner);
+        int selectOption = ScannerValidators.displayScannerValidator(initScanner);
 
         switch (selectOption) {
 
@@ -119,7 +121,7 @@ public class ChronosApp {
 
         System.out.println("Select the time u want the chronometer to stop: ");
 
-        int millisTime = validationScanner(initScanner);
+        int millisTime = ScannerValidators.displayScannerValidator(initScanner);
 
         chronos.startChronos();
 
@@ -128,26 +130,6 @@ public class ChronosApp {
         chronos.pauseChronos();
 
         chronos.resetChronos();
-
-    }
-
-    private static boolean verifyScannerInt (Scanner initScanner) {
-
-        return initScanner.hasNextInt();
-
-    }
-
-    private static int validationScanner (Scanner initScanner) {
-
-        while (!verifyScannerInt(initScanner)) {
-
-            System.out.println("Enter a valid number!");
-
-            initScanner.next();
-
-        }
-
-        return initScanner.nextInt();
 
     }
 
