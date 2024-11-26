@@ -8,6 +8,8 @@ import java.util.Scanner;
 
 import java.util.Locale;
 
+import validators.ValidatorsPackage;
+
 public class ChronosApp {
 
     public static void main (String[] args) throws  InterruptedException {
@@ -26,7 +28,7 @@ public class ChronosApp {
 
         char userCommand = initScanner.next().charAt(0);
 
-        chronosControl(userCommand);
+        ValidatorsPackage.displayChronosControl(userCommand);
 
         chronosOptions(initScanner);
 
@@ -108,19 +110,6 @@ public class ChronosApp {
 
     }
 
-    private static void chronosControl (char userInput) {
-
-        if (userInput != 'y' && userInput != 'Y') {
-
-            System.out.println("See ya!");
-
-            return;
-
-        }
-
-        System.out.println("Welcome!");
-
-    }
 
     private static void chronosChronometerControl (Scanner initScanner) throws InterruptedException {
 
