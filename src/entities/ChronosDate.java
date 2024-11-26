@@ -79,25 +79,27 @@ public class ChronosDate {
 
             case 'm' | 'M':
 
-                System.out.println("(p or P) to add, otherwise we shall reduce the months ourselves");
+                System.out.println("(p or P) to add, otherwise we shall reduce the months ourselves \n");
 
                 char askAnotherQuestion = init.next().charAt(0);
 
                 if (askAnotherQuestion == 'p' || askAnotherQuestion == 'P') {
 
-                    System.out.println("Enter a value to add: ");
+                    System.out.println("Enter a value to add: \n");
 
-                    int addValue = init.nextInt();
+                    long addValue = init.nextLong();
 
                     LocalDate newDate = date.plusMonths(addValue);
 
                     System.out.println(newDate);
 
+                    return;
+
                 }
 
-                System.out.println("Enter a value to subtract: ");
+                System.out.println("Enter a value to subtract: \n");
 
-                int subtractValue = init.nextInt();
+                long subtractValue = init.nextLong();
 
                 LocalDate newDate = date.minusMonths(subtractValue);
 
@@ -105,29 +107,59 @@ public class ChronosDate {
 
             case 'D' | 'd':
 
-                System.out.println("Plus or minus? ");
+                System.out.println("Plus or minus? \n");
 
                 char askNewQuestion = init.next().charAt(0);
 
                 if (askNewQuestion == 'p' || askNewQuestion == 'P') {
 
-                    System.out.println("Enter a value to add: ");
+                    System.out.println("Enter a value to add: \n");
 
-                    int addValue = init.nextInt();
+                    long addValue = init.nextLong();
 
                     LocalDate newDateDays = date.plusDays(addValue);
 
                     System.out.println(newDateDays);
 
+                    return;
+
                 }
 
-                System.out.println("Enter a value to subtract: ");
+                System.out.println("Enter a value to subtract: \n");
 
-                int subtractValueDays = init.nextInt();
+                long subtractValueDays = init.nextLong();
 
                 LocalDate newDateDays = date.minusDays(subtractValueDays);
 
                 System.out.println(newDateDays);
+
+            case 'y' | 'Y':
+
+                System.out.println("Plus or minus? \n");
+
+                char askQuestionAboutYear = init.next().charAt(0);
+
+                if (askQuestionAboutYear == 'p' || askQuestionAboutYear == 'P') {
+
+                    System.out.println("Enter a value to add: \n");
+
+                    long addValue = init.nextLong();
+
+                    LocalDate newDateYear = date.plusYears(addValue);
+
+                    System.out.println(newDateYear);
+
+                    return;
+
+                }
+
+                System.out.println("Enter a value to subtract: \n");
+
+                long subtractValueYears = init.nextLong();
+
+                LocalDate newDateYears = date.minusDays(subtractValueYears);
+
+                System.out.println(newDateYears);
 
         }
 
