@@ -65,7 +65,7 @@ public class ChronosDate {
 
         Scanner init = new Scanner (System.in);
 
-        System.out.println("Enter (m or M for month) or (d or D for day): \n");
+        System.out.println("Enter (m or M) / (d or D) / (y or Y): \n");
 
         char userChoice = init.next().charAt(0);
 
