@@ -90,15 +90,15 @@ public class ChronosApp {
 
         System.out.println("Enter a year: ");
 
-        int year = init.nextInt();
+        int year = ScannerValidators.displayScannerValidator(init);
 
         System.out.println("Enter a month: ");
 
-        int month = init.nextInt();
+        int month = ScannerValidators.displayScannerValidator(init);
 
         System.out.println("Enter a day: ");
 
-        int day = init.nextInt();
+        int day = ScannerValidators.displayScannerValidator(init);
 
         ChronosDate.timeProgressionWithChronos(year, month, day);
 

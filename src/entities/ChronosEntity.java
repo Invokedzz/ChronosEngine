@@ -42,6 +42,8 @@ public class ChronosEntity {
 
             runChronometer();
 
+            notify();
+
         }
 
     }
@@ -57,6 +59,8 @@ public class ChronosEntity {
             pausedChronos = true;
 
             stopChronos = true;
+
+            notify();
 
         }
 
@@ -82,29 +86,32 @@ public class ChronosEntity {
 
         new Thread(() -> {
 
-            while (!stopChronos) {
+            synchronized (this) {
 
-                if (runningChronos) {
+                while (!stopChronos) {
 
-                    long currentTime = System.currentTimeMillis();
+                    if (runningChronos) {
 
-                    long timeTraveled = currentTime - startTime;
+                        long currentTime = System.currentTimeMillis();
 
-                    chronosEngine(timeTraveled);
+                        long timeTraveled = currentTime - startTime;
 
-                    try {
+                        chronosEngine(timeTraveled);
 
-                        Thread.sleep(1000);
+                        try {
 
-                    } catch (InterruptedException e) {
+                            wait(1000); // Have a greater performance than Thread.sleep();
 
-                        Thread.currentThread().interrupt();
-                        System.out.println(e.getMessage());
+                        } catch (InterruptedException e) {
+
+                            Thread.currentThread().interrupt();
+                            System.out.println(e.getMessage());
+
+                        }
 
                     }
 
                 }
-
             }
 
         }).start();
