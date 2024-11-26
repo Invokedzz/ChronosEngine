@@ -6,6 +6,8 @@ import java.time.LocalTime;
 
 import java.time.format.DateTimeFormatter;
 
+import validators.ScannerValidators;
+
 import java.util.Scanner;
 
 public class ChronosDate {
@@ -87,7 +89,7 @@ public class ChronosDate {
 
                     System.out.println("Enter a value to add: \n");
 
-                    long addValue = init.nextLong();
+                    long addValue = ScannerValidators.displayScannerValidatorLong(init);
 
                     LocalDate newDate = date.plusMonths(addValue);
 
@@ -99,7 +101,7 @@ public class ChronosDate {
 
                 System.out.println("Enter a value to subtract: \n");
 
-                long subtractValue = init.nextLong();
+                long subtractValue = ScannerValidators.displayScannerValidatorLong(init);
 
                 LocalDate newDate = date.minusMonths(subtractValue);
 
@@ -115,7 +117,7 @@ public class ChronosDate {
 
                     System.out.println("Enter a value to add: \n");
 
-                    long addValue = init.nextLong();
+                    long addValue = ScannerValidators.displayScannerValidatorLong(init);
 
                     LocalDate newDateDays = date.plusDays(addValue);
 
@@ -127,7 +129,7 @@ public class ChronosDate {
 
                 System.out.println("Enter a value to subtract: \n");
 
-                long subtractValueDays = init.nextLong();
+                long subtractValueDays = ScannerValidators.displayScannerValidatorLong(init);
 
                 LocalDate newDateDays = date.minusDays(subtractValueDays);
 
@@ -143,7 +145,7 @@ public class ChronosDate {
 
                     System.out.println("Enter a value to add: \n");
 
-                    long addValue = init.nextLong();
+                    long addValue = ScannerValidators.displayScannerValidatorLong(init);
 
                     LocalDate newDateYear = date.plusYears(addValue);
 
