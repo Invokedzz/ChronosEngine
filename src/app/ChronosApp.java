@@ -58,6 +58,12 @@ public class ChronosApp {
 
                 break;
 
+            case 4:
+
+                changeMonthOrDaysWithChronos(initScanner);
+
+                break;
+
             default:
 
                 System.out.println("Select a valid option!");
@@ -73,6 +79,24 @@ public class ChronosApp {
         System.out.println("Let's display the current date for u. \n");
 
         ChronosDate.showDateWithChronos();
+
+    }
+
+    private static void changeMonthOrDaysWithChronos (Scanner init) {
+
+        System.out.println("Enter a year: ");
+
+        int year = init.nextInt();
+
+        System.out.println("Enter a month: ");
+
+        int month = init.nextInt();
+
+        System.out.println("Enter a day: ");
+
+        int day = init.nextInt();
+
+        ChronosDate.timeProgressionWithChronos(year, month, day);
 
     }
 
