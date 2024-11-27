@@ -18,7 +18,7 @@ public class DateValidator {
 
         if (year > 2024) {
 
-            System.out.println("Enter a valid value!");
+            System.out.println("Replaced the year value for 2024 \n");
 
             return 2024;
 
@@ -32,7 +32,7 @@ public class DateValidator {
 
         if (month > 12) {
 
-            System.out.println("Enter a valid value!");
+            System.out.println("Replaced the month value for 2024 \n");
 
             return 12;
 
@@ -46,7 +46,7 @@ public class DateValidator {
 
         if (day <= 0 || day > 31) {
 
-            System.out.println("Enter a valid value!");
+            System.out.println("Replaced the day value for 31 \n");
 
             return 31;
 
