@@ -8,6 +8,8 @@ import java.time.format.DateTimeFormatter;
 
 import validators.ScannerValidators;
 
+import validators.DateValidator;
+
 import java.util.Scanner;
 
 public class ChronosDate {
@@ -58,6 +60,14 @@ public class ChronosDate {
     }
 
     public static void timeProgressionWithChronos (int year, int month, int day) {
+
+        int[] validateValues = DateValidator.grabDateElements(year, month, day);
+
+        year = validateValues[0];
+
+        month = validateValues[1];
+
+        day = validateValues[2];
 
         String manualParse = String.format("%04d-%02d-%02d", year, month, day);
 
