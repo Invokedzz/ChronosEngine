@@ -81,31 +81,8 @@ public class ChronosDate {
 
             case 'm' | 'M':
 
-                System.out.println("(p or P) to add, otherwise we shall reduce the months ourselves \n");
+                receiveMonth(date, init);
 
-                char askAnotherQuestion = init.next().charAt(0);
-
-                if (askAnotherQuestion == 'p' || askAnotherQuestion == 'P') {
-
-                    System.out.println("Enter a value to add: \n");
-
-                    long addValue = ScannerValidators.displayScannerValidatorLong(init);
-
-                    LocalDate newDate = date.plusMonths(addValue);
-
-                    System.out.println(newDate);
-
-                    return;
-
-                }
-
-                System.out.println("Enter a value to subtract: \n");
-
-                long subtractValue = ScannerValidators.displayScannerValidatorLong(init);
-
-                LocalDate newDate = date.minusMonths(subtractValue);
-
-                System.out.println(newDate);
 
             case 'D' | 'd':
 
@@ -167,7 +144,36 @@ public class ChronosDate {
 
     }
 
+    private static void receiveMonth (LocalDate date, Scanner init) {
 
+
+        System.out.println("(p or P) to add, otherwise we shall reduce the months ourselves \n");
+
+        char askAnotherQuestion = init.next().charAt(0);
+
+        if (askAnotherQuestion == 'p' || askAnotherQuestion == 'P') {
+
+            System.out.println("Enter a value to add: \n");
+
+            long addValue = ScannerValidators.displayScannerValidatorLong(init);
+
+            LocalDate newDate = date.plusMonths(addValue);
+
+            System.out.println(newDate);
+
+            return;
+
+        }
+
+        System.out.println("Enter a value to subtract: \n");
+
+        long subtractValue = ScannerValidators.displayScannerValidatorLong(init);
+
+        LocalDate newDate = date.minusMonths(subtractValue);
+
+        System.out.println(newDate);
+
+    }
 
     private static void dateByChronos () {
 
